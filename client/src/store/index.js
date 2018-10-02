@@ -4,10 +4,12 @@ import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import entry from './entry';
 import user from './user';
+import auth from './auth';
 
 const reducer = combineReducers({
     entry,
-    user
+    user,
+    auth
 });
 const middleware = composeWithDevTools(applyMiddleware(
     thunkMiddleware,
@@ -18,3 +20,4 @@ const store = createStore(reducer, middleware);
 export default store;
 export * from './entry';
 export * from './user';
+export * from './auth';
