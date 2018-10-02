@@ -4,10 +4,11 @@
   "description": "journal app",
   "main": "index.js",
   "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
     "server": "nodemon server/index.js",
-    "client": "react-scripts start",
+    "client": "cd client && npm run start",
     "start-dev": "webpack -w & nodemon server/index.js",
     "seed": "node script/seed.js",
     "test": "mocha ./server/**/*.spec.js ./server/**/**/*.spec.js"
@@ -18,7 +19,8 @@
   "author": "Palina Pasiukevich",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.17.5",
+    "concurrently": "^3.6.0"
   },
   "dependencies": {
     "axios": "^0.18.0",
