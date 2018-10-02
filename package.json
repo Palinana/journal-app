@@ -9,6 +9,7 @@
     "server": "nodemon server/index.js",
     "client": "react-scripts start",
     "start-dev": "webpack -w & nodemon server/index.js",
+    "seed": "node script/seed.js",
     "test": "mocha ./server/**/*.spec.js ./server/**/**/*.spec.js"
   },
   "repository": {
