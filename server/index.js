@@ -29,8 +29,8 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 db.sync()
 .then(() => {
   console.log('db is synced!');
-  app.listen(PORT, () => {
-    console.log(`listening on PORT ${8000}`);
+  app.listen(process.env.PORT || PORT, () => {
+    console.log(`listening on PORT ${PORT}`);
   });
 })
 .catch(console.error);
