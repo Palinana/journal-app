@@ -16,10 +16,10 @@
 - Create a database called journal
 - npm install
 - cd client
-- npm install
-- npm start 
+- npm install 
 - cd ..
 - npm run seed
+- npm run client
 - npm run server (http://localhost:8000)
 - npm test
 
