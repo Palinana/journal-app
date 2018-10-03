@@ -25,9 +25,6 @@ class Login extends Component {
 
         return (
         <div className="wrapper">
-            <div className="wrapper-header">
-                <h2 className="btn-back"></h2>
-            </div>
             <div className="row">
                 <div className="form__container">
                     <div className="form__container-header">

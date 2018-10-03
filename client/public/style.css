@@ -25,7 +25,7 @@ body {
 .container__content {
     width: 90%;
     margin: 0px auto;
-    padding: 1rem 3rem;
+    /* padding: 1rem 3rem; */
     border-bottom: 1px solid rgb(238, 238, 238);
 }
 
@@ -159,7 +159,7 @@ ul {
 .container__content-entry { 
     display: inline-block;
     text-align: left;
-    width: 80%;
+    width: 75%;
     font-size: 1.5rem;
     font-weight: 200;
 }
@@ -185,7 +185,7 @@ ul {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    width: 70rem;
+    width: 45rem;
     margin-top: -20px;
     margin-bottom: 20px;
     color: #A5A5A5;
@@ -205,7 +205,7 @@ ul {
 .form__container{
     width: 35%;
     margin: 0px auto;
-    padding: 6rem;
+    padding: 3rem;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 3rem 6rem;
     background-color: #F3F3F3;
