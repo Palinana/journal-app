@@ -4,7 +4,7 @@
   "description": "journal app",
   "main": "index.js",
   "scripts": {
-    "start": "server/index.js",
+    "start": "node server/index.js",
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
     "server": "nodemon server/index.js",
