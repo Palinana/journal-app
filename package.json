@@ -4,14 +4,15 @@
   "description": "journal app",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "server/index.js",
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
     "server": "nodemon server/index.js",
     "client": "cd client && npm run start",
     "start-dev": "webpack -w & nodemon server/index.js",
     "seed": "node script/seed.js",
-    "test": "mocha ./server/**/*.spec.js ./server/**/**/*.spec.js"
+    "test": "mocha ./server/**/*.spec.js ./server/**/**/*.spec.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "repository": {
     "type": "git"
