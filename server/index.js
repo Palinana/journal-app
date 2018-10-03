@@ -29,10 +29,10 @@ app.use((err, req, res, next) => {
 db.sync()
 .then(() => {
   console.log('db is synced!');
-  app.listen(process.env.PORT || PORT, () => {
-    console.log(`listening on PORT ${PORT}`);
-  });
-})
-.catch(console.error);
+}).catch(console.error);
+
+app.listen(process.env.PORT || PORT, () => {
+        console.log(`listening on PORT ${PORT}`);
+});
 
 module.exports = app;
