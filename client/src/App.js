@@ -8,8 +8,6 @@ import store from './store';
 import AddEntry from './components/AddEntry';
 import UserEntries from './components/UserEntries';
 import UserEntry from './components/UserEntry';
-// import AllUsers from './components/AllUsers';
-import Welcome from './components/Welcome';
 import Login from './components/Login';
 import Register from './components/Register';
 
@@ -21,12 +19,10 @@ class App extends Component {
           <div className="App">
             <div className="container">
               <Switch>                
-                <Route exact path="/" component={Welcome}/>
-                {/* <Route exact path="/users" component={AllUsers}/> */}
+                <Route exact path="/" component={Login}/>
                 <Route exact path="/users/:userId/entries" component={UserEntries}/>
                 <Route exact path="/users/:userId/entries/add" component={AddEntry}/>
                 <Route exact path="/users/:userId/entries/:entryId" component={UserEntry}/>
-                <Route exact path="/login" component={Login}/>
                 <Route exact path="/register" component={Register}/>
               </Switch>
             </div>

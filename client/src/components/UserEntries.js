@@ -5,9 +5,6 @@ import { fetchEntries } from '../store/entry';
 import { fetchUser } from '../store/user';
 
 class UserEntries extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount(){
         const userId = this.props.match.params.userId;
@@ -35,39 +32,39 @@ class UserEntries extends Component {
                     <div className="dashboard">
                         <div className="container__content">
                             <div className="container__content-left">
-                                <h2 className="btn-back">
-                                    Hello, { userName }
+                                <h2 className="container__content-user">
+                                    Hello, <span className="user-name">{ userName }</span>
                                 </h2>
                             </div>
 
                             <div className="container__content-right">
-                                <Link to={`/users/${userId}/entries/add`} className="btn-orange margin-text">Add Entry</Link>
-                                <Link to={`/login`} className="btn-orange">Logout</Link>
+                                <Link to={`/users/${userId}/entries/add`} className="btn-header margin-text">Add Entry</Link>
+                                <Link to={`/`} className="btn-header">Logout</Link>
                             </div>
                         </div>
 
-                        <div className="heading-text">
-                            <h2 className="heading-primary">All Entries:</h2>
+                        <div className="container__heading-text">
+                            <h2 className="container__heading-primary">All Entries:</h2>
                         </div>
 
-                        <div className="heading-text padding-box">
+                        <div className="container__padding-box">
                             { entries.length ? entries.map(entry => {
                                 return (   
-                                    <div className="container__content container__content-box" key={entry.id}>
-                                        <div className="container__content-date">
-                                            <ul>
-                                                <li className="color-secondary">{entry.createdAt.slice(8,10)}</li>
-                                                <li className="color-primary">{this.getMonthDays(entry.createdAt.slice(5,7))}</li>
-                                                <li className="color-tertiary">{entry.createdAt.slice(0,4)}</li>
-                                            </ul>
+                                    <div className="container__entry-box" key={entry.id}>
+                                        <div className="container__entry-date">
+                                            <h2>
+                                                <span className="color-secondary">{entry.createdAt.slice(8,10)}</span>
+                                                <span className="color-primary">{this.getMonthDays(entry.createdAt.slice(5,7))}</span>
+                                                <span className="color-tertiary">{entry.createdAt.slice(0,4)}</span>
+                                            </h2>
                                         </div>
-                                        <div className="container__content-entry">
-                                            <Link to={`/users/${userId}/entries/${entry.id}`} className="card-link"> <h2 className="entry-name">{entry.name}</h2></Link>
+                                        <div className="container__entry-text">
+                                            <Link to={`/users/${userId}/entries/${entry.id}`}><h2 className="entry-name">{entry.name}</h2></Link>
                                             <p className="entry-description">{entry.description}</p>
                                         </div>
                                     </div>
                                 )
-                            }) : <h1 className="heading-secondary">You have no entries</h1> }
+                            }) : <h1 className="container__heading-secondary">You have no entries</h1> }
                         </div>
                     </div>
                 </div>

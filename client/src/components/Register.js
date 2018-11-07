@@ -7,7 +7,8 @@ class Register extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: ''
+            username: '',
+            password: ''
         }
     }
 
@@ -26,33 +27,22 @@ class Register extends Component {
         <div className="wrapper">
             <div className="row">
                 <div className="form__container">
-                    <div className="form__container-header">
-                        <h2 className="heading-secondary">Register</h2>
-                    </div>
+                    <div className="form-screen">
+                        <div className="form__container-header">
+                            <h1 className="heading-primary--main">Journal</h1>
+                        </div>
 
-                    <div className="form__container-header">
-                        <h2 className="heading-tertiary">
-                            <Link to={'/login'}>Existing User? Login!</Link>
-                        </h2>
-                    </div>
-                    <div className="form__container-body">
-                        <form onSubmit={this.onSubmit}>
-                            <div className="form-group">
-                                <label htmlFor="username">Username</label>
-                                <input 
-                                    type="text" 
-                                    className="form-control"
-                                    name="username"
-                                    placeholder="Username"
-                                    required
-                                    onChange={this.onChange}
-                                    value={this.state.username}
-                                />
+                        <form onSubmit={this.onSubmit} className="form__container-body">
+                            <div className="control-group">
+                                <input type="text" className="login-field"  name="username" value={this.state.username} onChange={this.onChange} placeholder="username" id="login-name"/>
                             </div>
 
-                            <div className="form__group">
-                                <input type="submit" value="Register" className="btn-add" id="main-btn"/>
+                            <div class="control-group">
+                                <input type="password" className="login-field" name="password" onChange={this.onChange} value={this.state.password} placeholder="password" id="login-pass"/>
                             </div>
+
+                            <input type="submit" value="Register" className="btn btn-primary btn-large btn-block"/>
+                            <Link to={'/'} className="login-link">Existing User? Login!</Link>
                         </form>
                     </div>
                 </div>

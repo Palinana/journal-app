@@ -31,47 +31,28 @@ class AddEntry extends Component {
         return (
             <div className="wrapper">
                 <div className="wrapper-header">
-                    <h2 className="btn-back">
+                    <h2 className="btn-header">
                         <Link to={`/users/${userId}/entries`} className="btn-back-link">&larr; Go Back</Link>
                     </h2>
                 </div>
 
-
                 <div className="row">
                     <div className="form__container">
-                        <div className="form__container-header">
-                            <h2 className="heading-secondary"> Add New Entry</h2>
-                        </div>
-                        <div className="form__container-body">
-                            <form onSubmit={this.onSubmit}>
-                                <div className="form-group">
-                                    <label htmlFor="firstName">Name</label>
-                                    <input 
-                                        type="text" 
-                                        className="form-control"
-                                        name="name"
-                                        placeholder="Name"
-                                        required
-                                        onChange={this.onChange}
-                                        value={this.state.name}
-                                    />
+                        <div className="form-screen">
+                            <div className="form__container-header">
+                                <h2 className="heading-primary--main"> Add New Entry</h2>
+                            </div>
+                            <form className="form__container-body" onSubmit={this.onSubmit}>
+                                <div className="control-group">
+                                    <input type="text" className="login-field"  name="name" value={this.state.name} onChange={this.onChange} placeholder="name" id="login-name" required/>
                                 </div>
 
-                                <div className="form-group">
-                                    <label htmlFor="firstName">Description</label>
-                                    <input 
-                                        type="text" 
-                                        className="form-control"
-                                        name="description"
-                                        placeholder="Description"
-                                        required
-                                        onChange={this.onChange}
-                                        value={this.state.description}
-                                    />
+                                <div className="control-group">
+                                    <textarea type="text" className="login-field"  name="description" value={this.state.description} onChange={this.onChange} placeholder="description" id="login-name" required/>
                                 </div>
 
-                                <div className="form-group">
-                                    <input type="submit" value="Submit" className="btn-add" id="main-btn"/>
+                                <div className="control-group">
+                                    <input type="submit" value="Submit" className="btn btn-primary btn-large btn-block" id="main-btn"/>
                                 </div>
                             </form>
                         </div>
