@@ -22,7 +22,7 @@ class UserEntry extends Component {
                 <div className="dashboard">
                     <div className="container__content">
                         <div className="container__content-left">
-                            <h2 className="btn-back">
+                            <h2 className="btn-header">
                                 <Link to={`/users/${userId}/entries`} className="btn-back-link">&larr; Back to All Entries</Link>
                             </h2>
                         </div>
@@ -32,12 +32,11 @@ class UserEntry extends Component {
                         </div>
                     </div>
 
-                    <div className="heading-text padding-text">
-                        <h2 className="heading-primary">{entry.name}</h2>
+                    <div className="container__heading-text padding-text">
+                        <h2 className="container__heading-entry">{entry.name}</h2>
                         <div className="container__text">
-                            <p className="text">{entry.description}</p>
+                            <p className="entry-text">{entry.description}</p>
                         </div>
-                        
                     </div>        
                 </div>
             </div>
